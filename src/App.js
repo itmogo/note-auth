@@ -15,12 +15,12 @@ function App() {
     <div className="container">
       <div className="row">
         <div className="col-md-5">
-        <h4>Users Form</h4>
+        <h5>Note App Form</h5>
           <UserForm />
         </div>
 
         <div className="col-md-7">
-        <h4>Users List</h4>
+        <h5>Note App Details</h5>
           <UserList />
         </div>
       </div>

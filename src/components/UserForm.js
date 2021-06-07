@@ -8,10 +8,9 @@ import { Button, Form } from "react-bootstrap";
 function UserForm(props) {
   // default user state is an object with empty string as value
   const [state, setState] = useState({
-    username: "",
-    email: "",
-    password: "",
-    country: "",
+    noteTitle: "",
+    noteDate: "",
+    noteText: "",
   });
 
   //a function that get called anytime an input field changes
@@ -37,15 +36,15 @@ function UserForm(props) {
 
   return (
     <div>
-      <form>
+      <form className="formShadow"> 
         <div>
          <Form.Group controlId="formBasicEmail">
-          <Form.Label>User Name</Form.Label>
+          <Form.Label><b>Note Title</b></Form.Label>
           <Form.Control 
-          type="email" 
-          placeholder="Enter email" 
-          name="username"
-          value={state.username} //the value will the same as data in the state
+          type="text" 
+          placeholder="Enter your note title" 
+          name="noteTitle"
+          value={state.noteTitle} //the value will the same as data in the state
           onChange={handleOnChange} //we setup onchange to call our handle onchange function
           required />
           </Form.Group>
@@ -53,46 +52,35 @@ function UserForm(props) {
         </div>
         <br />
         <Form.Group controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
+          <Form.Label><b>Date Recorded</b></Form.Label>
           <Form.Control 
-          type="email"
-          placeholder="Enter email"
-          name="email"
-          value={state.email}
+          type="date"
+          placeholder="Enter your date"
+          name="noteDate"
+          value={state.noteDate}
           onChange={handleOnChange} //we setup onchange to call our handle onchange function
           required/>         
         </Form.Group>
        
         <br />
         <Form.Group>
-          <Form.Label>Country</Form.Label>          
-            <Form.Control
+          <Form.Label><b>Note Text</b></Form.Label><br />         
+            <textarea
             type="text"
-            name="country"
-            value={state.country}
+            name="noteText"
+            value={state.noteText}
             onChange={handleOnChange} //we setup onchange to call our handle onchange function
-            placeholder="Enter country"
-            required/>
+            placeholder="Enter your text here"
+            required></textarea>
         </Form.Group>
+        
+        
         <br />
-
-        <Form.Group>
-          <Form.Label>Password</Form.Label>
-          <br />
-          <Form.Control
-            type="password"
-            name="password"
-            value={state.password}
-            onChange={handleOnChange} //we setup onchange to call our handle onchange function
-            placeholder="Your password..."
-            required />
-        </Form.Group>
-        <br /><br />
 
         <div>
           {/* the create user button call the handleSubmit functon when clicked */}
           <Button type="button" variant="primary" onClick={handleSubmit}>
-            <span>Create New User</span>
+            <span>Add New Note</span>
           </Button>
         </div>
       </form>
