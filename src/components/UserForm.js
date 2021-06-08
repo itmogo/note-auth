@@ -71,7 +71,9 @@ function UserForm(props) {
             value={state.noteText}
             onChange={handleOnChange} //we setup onchange to call our handle onchange function
             placeholder="Enter your text here"
-            required></textarea>
+            required
+            row="5"
+            cols="40"></textarea>
         </Form.Group>
         
         

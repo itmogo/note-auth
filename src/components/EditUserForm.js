@@ -49,7 +49,7 @@ function EditUserForm(props) {
               required
             />
           </Form.Group>
-        </div>{" "}
+        </div>
         <br />
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Date Recorded</Form.Label>
@@ -72,6 +72,9 @@ function EditUserForm(props) {
             onChange={handleOnChange} //we setup onchange to call our handle onchange function
             placeholder="Enter your notes"
             required
+            row="5"
+            cols="40"
+
           />
         </Form.Group>
         <br />

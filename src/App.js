@@ -12,18 +12,21 @@ function App() {
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover"     
     }}>
-    <div className="container">
+    
+    <div className="container contapp">
+    <div><marquee><h3> A Note Book Application</h3></marquee>
       <div className="row">
         <div className="col-md-5">
-        <h5>Note App Form</h5>
+        <h6>Note App Form</h6>
           <UserForm />
         </div>
 
         <div className="col-md-7">
-        <h5>Note App Details</h5>
+       <h6>Note App Details</h6>
           <UserList />
         </div>
       </div>
+    </div>
     </div>
     </div>
 
