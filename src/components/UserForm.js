@@ -32,40 +32,53 @@ function UserForm(props) {
     let userId = 10000 + Math.random() * 10000000;
     let user = { ...state, id: userId };
     props.addUserAction(user);
+    setState({
+      noteTitle: "",
+      noteDate: "",
+      noteText: "",
+    });
   }
 
   return (
     <div>
-      <form className="formShadow"> 
+      <form className="formShadow">
         <div>
-         <Form.Group controlId="formBasicEmail">
-          <Form.Label><b>Note Title</b></Form.Label>
-          <Form.Control 
-          type="text" 
-          placeholder="Enter your note title" 
-          name="noteTitle"
-          value={state.noteTitle} //the value will the same as data in the state
-          onChange={handleOnChange} //we setup onchange to call our handle onchange function
-          required />
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label>
+              <b>Note Title</b>
+            </Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter your note title"
+              name="noteTitle"
+              value={state.noteTitle} //the value will the same as data in the state
+              onChange={handleOnChange} //we setup onchange to call our handle onchange function
+              required
+            />
           </Form.Group>
-
         </div>
         <br />
         <Form.Group controlId="formBasicEmail">
-          <Form.Label><b>Date Recorded</b></Form.Label>
-          <Form.Control 
-          type="date"
-          placeholder="Enter your date"
-          name="noteDate"
-          value={state.noteDate}
-          onChange={handleOnChange} //we setup onchange to call our handle onchange function
-          required/>         
+          <Form.Label>
+            <b>Date Recorded</b>
+          </Form.Label>
+          <Form.Control
+            type="date"
+            placeholder="Enter your date"
+            name="noteDate"
+            value={state.noteDate}
+            onChange={handleOnChange} //we setup onchange to call our handle onchange function
+            required
+          />
         </Form.Group>
-       
+
         <br />
         <Form.Group>
-          <Form.Label><b>Note Text</b></Form.Label><br />         
-            <textarea
+          <Form.Label>
+            <b>Note Text</b>
+          </Form.Label>
+          <br />
+          <textarea
             type="text"
             name="noteText"
             value={state.noteText}
@@ -73,10 +86,10 @@ function UserForm(props) {
             placeholder="Enter your text here"
             required
             row="5"
-            cols="40"></textarea>
+            cols="40"
+          ></textarea>
         </Form.Group>
-        
-        
+
         <br />
 
         <div>

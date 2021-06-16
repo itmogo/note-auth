@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Button, Form } from 'react-bootstrap';
+import { Modal, Button } from 'react-bootstrap';
 import EditUserForm from './EditUserForm';
 import { connect } from 'react-redux';
 import { deleteUserAction } from '../actions/userActions';

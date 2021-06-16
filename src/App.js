@@ -14,7 +14,7 @@ function App() {
     }}>
     
     <div className="container contapp">
-    <div><marquee><h3> A Note Book Application</h3></marquee>
+    <div><h3> A Note Book Application</h3>
       <div className="row">
         <div className="col-md-5">
         <h6>Note App Form</h6>
