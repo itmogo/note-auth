@@ -37,7 +37,8 @@ function UserItem(props) {
        <div className="down">
         <Button
          variant="success btn-xs"
-          className="editbtn action" 
+          className="editbtn action d-grid gap-2 col-3 mx-auto" 
+          
           onClick={showModal}
           >
           Update Note</Button>
@@ -51,7 +52,7 @@ function UserItem(props) {
             <EditUserForm user={props.user} hideModal={hideModal} />
           </Modal.Body>
         </Modal>
-        <Button variant="danger btn-xs" className="action"
+        <Button variant="danger btn-xs" className="action  d-grid gap-2 col-3 mx-auto"
           onClick={() => {
             props.deleteUserAction(props.user.id);
           }} >
