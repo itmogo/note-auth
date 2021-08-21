@@ -1,9 +1,17 @@
-export function addUserAction(user) {
-    return {
-      type: 'ADD_USER',
-      payload: user,
-    };
-  }
+export const addUserAction = (user) => {
+    return ( dispatch, state, { getFirestore }) => {
+      getFirestore()
+      .collection('users')
+      .add(user)
+      .then((doc) => {
+        dispatch({
+              type: 'ADD_USER',
+              payload: user,
+            })   
+      });
+    };    
+};
+
   
   export function deleteUserAction(id) {
     return {
