@@ -86,7 +86,7 @@ function UserForm(props) {
             placeholder="Enter your text here"
             required
             row="5"
-            cols="40"
+            cols="30"
           ></textarea>
         </Form.Group>
 
