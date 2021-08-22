@@ -20,9 +20,11 @@ export default function (state = initalState, action) {
         if (user.id === id) {
           return updatedUserInfo;
         }
-        return user;
+        return user; 
       });
-      return { users: usersAfterUpdate };
+      return { users: usersAfterUpdate }; 
+      case 'SET_ALL_USERS':
+        return { users: action.payload};
     default:
       return state;
   }
