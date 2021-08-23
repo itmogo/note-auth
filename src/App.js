@@ -11,7 +11,6 @@ import {connect} from 'react-redux';
 
 //function 
 export class App extends Component{
-
   componentDidMount(){
     this.props.getAllUsers();
   };

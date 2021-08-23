@@ -1,7 +1,7 @@
 export const addUserAction = (user) => {
   return (dispatch, state, { getFirestore }) => {
     getFirestore()
-      .collection("users")       
+      .collection("users")      
       .add({...user, timestamp: getFirestore().FieldValue.serverTimestamp()})
       .then((doc) => {
        
@@ -31,7 +31,12 @@ export const updateUserAction = (id, updatedUser) =>{
     }).catch((err)=>{
 
     });
-  }  
+  } 
+  
+  //{
+    //type: "UPDATE_USER",
+    //payload: { id: id, updatedUserInfo: updatedUser },
+  //};
 }
 
 //get allusers from firebase store
@@ -40,7 +45,7 @@ export const getAllUsers = () => {
   return (dispatch, state, { getFirestore }) => {
     getFirestore()
       .collection("users")
-      .orderBy('timestamp', 'desc')
+      .orderBy('noteTitle', 'desc')
       .onSnapshot(
         (snapshot) => {
           let users = [];
