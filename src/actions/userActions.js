@@ -4,10 +4,7 @@ export const addUserAction = (user) => {
       .collection("users")
       .add(user)
       .then((doc) => {
-       // dispatch({
-        //  type: "ADD_USER",
-        //  payload: user,
-       // });
+       
       });
   };
 };
@@ -21,18 +18,20 @@ export const deleteUserAction =(id) => {
 
       })
     }   
-  
-  //{
-    //type: "DELETE_USER",
-    //payload: id,
-  //};
 }
 
-export function updateUserAction(id, updatedUser) {
-  return {
-    type: "UPDATE_USER",
-    payload: { id: id, updatedUserInfo: updatedUser },
-  };
+export const updateUserAction = (id, updatedUser) =>{
+  return (dispatch, state, {getFirestore}) => {
+    getFirestore()
+    .collection('users')
+    .doc(id)
+    .set(updatedUser)
+    .then(()=>{
+
+    }).catch((err)=>{
+
+    });
+  }  
 }
 
 //get allusers from firebase store
